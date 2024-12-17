@@ -1,7 +1,5 @@
 # Weather Forecast App
 
-# Weather Forecast App
-
 The Weather Forecast App is a user-friendly application that provides real-time weather updates and a 5-day forecast for any city worldwide. Users can easily search for weather information by entering the name of a city. The app displays detailed weather conditions, including temperature, humidity, wind speed, and a brief description of the weather. Additionally, the app features a theme toggle button, allowing users to switch between light and dark modes for a personalized experience.
 
 ## Features
