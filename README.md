@@ -26,11 +26,6 @@ Additionally, the app features a theme toggle button, allowing users to switch b
 
 ## Getting Started
 
-### Prerequisites
-
-- A modern web browser
-- Internet connection
-
 ### Installation
 
 1. Clone the repository:
@@ -69,9 +64,42 @@ Additionally, the app features a theme toggle button, allowing users to switch b
 
 This project uses the SheCodes Weather API to fetch weather data. You will need an API key to use this service.
 
-## License
+### Example API Call
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+Get the current weather for a city:
+
+```
+https://api.shecodes.io/weather/v1/current?query={query}&key={key}
+```
+
+### Example API Response for Kinshasa
+
+```json
+{
+  "city": "Kinshasa",
+  "country": "Democratic Republic of the Congo",
+  "coordinates": {
+    "longitude": 15.3222,
+    "latitude": -4.325
+  },
+  "condition": {
+    "description": "clear sky",
+    "icon_url": "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png",
+    "icon": "clear-sky-day"
+  },
+  "temperature": {
+    "current": 30.12,
+    "humidity": 60,
+    "feels_like": 32.00,
+    "pressure": 1012
+  },
+  "wind": {
+    "speed": 3.5,
+    "degree": 90
+  },
+  "time": 1734436974
+}
+```
 
 ## Acknowledgements
 
