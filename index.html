@@ -16,13 +16,21 @@
     </head>
 
     <body>
+        <!-- Add this inside the body tag, preferably at the top -->
+        <button id="theme-toggle" class="theme-toggle"><strong>Toggle Theme</strong></button>
         <div class="weather-app">
             <p class="intro"><strong>WEATHER FORECAST APP</strong></p>
             <header>
                 <form class="search-form" id="search-form">
-                    <input type="search" placeholder="Enter a city.." required id="search-form-input"
-                        class="search-form-input" />
-                    <input type="submit" value="Search" class="search-form-button" />
+                    <div class="search-container">
+                        <input type="search" 
+                        placeholder="Enter a city.." 
+                        required id="search-form-input" class="search-form-input" 
+                        />
+                        <input type="submit" 
+                        value="Search" class="search-form-button" 
+                        />
+                    </div>
                 </form>
             </header>
                 <main>

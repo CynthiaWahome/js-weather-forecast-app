@@ -1,3 +1,7 @@
+document.getElementById('theme-toggle').addEventListener('click', function () {
+    document.body.classList.toggle('dark-mode');
+});
+
 function refreshWeather(response) {
     let temperatureElement = document.querySelector('#temperature');
     let temperature = response.data.temperature.current;
@@ -82,12 +86,15 @@ function displayForecast(response) {
         <div class="weather-forecast-day">
             <div class="weather-forecast-date">${formatday(day.time)}</div>
 
-            <img src="${day.condition.icon_url}" class="weather-forecast-icon" alt="" />
+            <img src="${day.condition.icon_url
+                }" class="weather-forecast-icon" alt="" />
             <div class="weather-forecast-temperatures">
                 <div class="weather-forecast-temperature">
                     <strong>${Math.round(day.temperature.maximum)}º</strong>
                 </div>
-            <div class="weather-forecast-temperature">${Math.round(day.temperature.minimum)}º
+            <div class="weather-forecast-temperature">${Math.round(
+                    day.temperature.minimum
+                )}º
             </div>
             </div>
         </div>

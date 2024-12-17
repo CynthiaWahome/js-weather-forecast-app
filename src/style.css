@@ -1,49 +1,112 @@
 body {
-    background-color: #f9f7fe;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
     font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #333;
+}
+
+body.dark-mode {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #fff;
 }
 
 a {
-    color: #885df1;
+    color: #fa61ff;
+    text-decoration: none;
 }
 
 .weather-app {
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     max-width: 600px;
     margin: 45px auto;
-    box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
-    border-radius: 16px;
     padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+body.dark-mode .weather-app {
+    background: rgba(0, 0, 0, 0.7);
 }
 
 header {
-    border-bottom: 1px solid #f9f7fe;
+    border-bottom: 1px solid #6a11cb;
     padding: 0 0 30px 0;
+}
+
+body.dark-mode header {
+    border-bottom: 1px solid #fa61ff;
 }
 
 p.intro {
     text-align: center;
-    color: #885df1;
+    color: #6a11cb;
     font-size: 24px;
 }
 
-.search-form-input {
-    background-color: #f9f7fe;
-    border: none;
+body.dark-mode p.intro {
+    color: #fa61ff;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid #6a11cb;
     border-radius: 6px;
-    width: 80%;
+    overflow: hidden;
+    width: 150%; 
+    max-width: 600px; 
+}
+
+body.dark-mode .search-container {
+    border: 2px solid #fa61ff;
+}
+
+.search-form-input {
+    background-color: #fff;
+    border: none; 
     font-size: 16px;
     padding: 15px 20px;
+    color: #333;
+    flex: 1;
+}
+
+body.dark-mode .search-form-input {
+    background-color: #333;
+    color: #fff;
 }
 
 .search-form-button {
-    background: #885df1;
+    background: #6a11cb;
     padding: 15px 30px;
     border: none;
     font-size: 16px;
-    margin-left: 5px;
-    border-radius: 6px;
     color: white;
+    cursor: pointer;
+}
+
+.search-form-button:hover {
+    background: #2575fc;
+}
+
+body.dark-mode .search-form-button {
+    background: #fa61ff;
+}
+
+body.dark-mode .search-form-button:hover {
+    background: #2A4F5E;
 }
 
 main {
@@ -63,17 +126,26 @@ main {
 
 .weather-app-details {
     font-size: 16px;
-    color: rgba(39, 33, 66, 0.4);
+    color: rgba(39, 33, 66, 0.6);
     line-height: 24px;
     font-weight: 500;
 }
 
+body.dark-mode .weather-app-details {
+    color: rgba(255, 255, 255, 0.8);
+}
+
 .weather-app-details strong {
-    color: #f65282;
+    color: #6a11cb;
+}
+
+body.dark-mode .weather-app-details strong {
+    color: #fa61ff;
 }
 
 .weather-app-temperature-container {
     display: flex;
+    align-items: center;
 }
 
 .weather-app-icon {
@@ -85,11 +157,21 @@ main {
     font-size: 88px;
     line-height: 88px;
     font-weight: bold;
+    color: #6a11cb;
+}
+
+body.dark-mode .weather-app-temperature {
+    color: #fa61ff;
 }
 
 .weather-app-unit {
     margin-top: 6px;
     font-size: 28px;
+    color: #6a11cb;
+}
+
+body.dark-mode .weather-app-unit {
+    color: #fa61ff;
 }
 
 .weather-forecast {
@@ -100,10 +182,14 @@ main {
 
 .weather-forecast-date {
     text-align: center;
-    color: rgba(39, 33, 66, 0.4);
+    color: rgba(39, 33, 66, 0.6);
     font-size: 16px;
     line-height: 20px;
     margin-bottom: 10px;
+}
+
+body.dark-mode .weather-forecast-date {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .weather-forecast-icon {
@@ -115,10 +201,14 @@ main {
 
 .weather-forecast-temperatures {
     text-align: center;
-    color: #f65282;
+    color: #6a11cb;
     margin-top: 10px;
     display: flex;
     justify-content: center;
+}
+
+body.dark-mode .weather-forecast-temperatures {
+    color: #fa61ff;
 }
 
 .weather-forecast-temperature {
@@ -126,9 +216,31 @@ main {
 }
 
 footer {
-    border-top: 1px solid #f9f7fe;
+    border-top: 1px solid #6a11cb;
     padding: 30px 0 0 0;
     text-align: center;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode footer {
+    border-top: 1px solid #fa61ff;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: #6A11CB; 
+    border: none;
+    border-radius: 6px;
+    color: #ffff; 
+    cursor: pointer;
+}
+
+body.dark-mode .theme-toggle {
+    background: #FA61FF; 
+    color: #0B1417;
 }
